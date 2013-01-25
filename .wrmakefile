@@ -47,6 +47,11 @@ clean :: external_clean $(CLEAN_STEP) _clean
 external_clean ::
 	@echo ""
 
+GIT_VERSION := `git log --pretty=oneline | head --bytes=41`
+GIT_STATUS := `git status | head -n 2 | tail -n 1`
+ifneq(,$(findstring("#",$(GIT_STATUS)))
+  GIT_VERSION := $(addsefix " modified", $(GIT_VERSION))
+
 GitChecksum.h:
-	@echo -E "Latest Commit checksum: `git log --pretty=oneline | head --bytes=41`"
-	echo -nE "#define GIT_CHECKSUM `git log --pretty=oneline | head --bytes=41`" > $(PRJ_ROOT_DIR)/GitChecksum.h
+	@echo -E "Latest Commit checksum: $(GIT_VERSION)"
+	echo -nE "const char* GIT_VERSION=\"$(GIT_VERSION)\"" > $(PRJ_ROOT_DIR)/GitChecksum.h
