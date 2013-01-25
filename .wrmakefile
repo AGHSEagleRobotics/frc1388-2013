@@ -26,7 +26,7 @@ external_build ::
 	@echo ""
 
 # main entry point for pre processing prior to the build
-pre_build :: $(PRE_BUILD_STEP) generate_sources
+pre_build :: $(PRE_BUILD_STEP) generate_sources GitChecksum.h
 	@echo ""
 
 # entry point for generating sources prior to the build
@@ -46,3 +46,7 @@ clean :: external_clean $(CLEAN_STEP) _clean
 # entry point for extending the build clean
 external_clean ::
 	@echo ""
+
+GitChecksum.h:
+	@echo -E "Latest Commit checksum: `git log --pretty=oneline | head --bytes=41`"
+	echo -nE "#define GIT_CHECKSUM `git log --pretty=oneline | head --bytes=41`" > $(PRJ_ROOT_DIR)/GitChecksum.h
