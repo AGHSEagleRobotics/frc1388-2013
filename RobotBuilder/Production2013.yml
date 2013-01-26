@@ -1,7 +1,7 @@
 Version 0.0.2
 
 ---
-Name: Production2013
+Name: frc1388-2013
 Base: Robot
 Children:
 - Name: Subsystems
@@ -299,7 +299,7 @@ Properties:
   Autonomous Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
     name: Autonomous Command, type: Command, validators: null, value: Autonomous Command}
   Wiring File: !!robotbuilder.data.properties.FileProperty {default: '', extension: html,
-    folder: false, name: Wiring File, validators: null, value: 'C:\WindRiver\workspace\Production2013\RobotBuilder\Production2013.html'}
+    folder: false, name: Wiring File, validators: null, value: 'C:\WindRiver\workspace\frc1388-2013\RobotBuilder\Production2013.html'}
   C++ Windriver Workspace: !!robotbuilder.data.properties.FileProperty {default: 'C:\Windriver\workspace',
     extension: null, folder: true, name: C++ Windriver Workspace, validators: null,
     value: 'C:\Windriver\workspace'}

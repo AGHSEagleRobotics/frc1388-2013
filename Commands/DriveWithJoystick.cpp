@@ -26,7 +26,7 @@ void DriveWithJoystick::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void DriveWithJoystick::Execute() {
-	drivetrain->
+	drivetrain->tankDrive();
 }
 
 // Make this return true when this Command no longer needs to run execute()
