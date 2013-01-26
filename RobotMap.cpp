@@ -43,7 +43,8 @@ void RobotMap::init() {
         driveTrainRobotDrive->SetMaxOutput(1.0);
         
 
-	shooterShooterMotor = new CANJaguar(2);
+    // We want the shooter motor to be set in voltage controlling mode.
+	shooterShooterMotor = new CANJaguar(2, CANJaguar::kVoltage);
 	
 	
 	climberClimberMotor = new Victor(1, 3);

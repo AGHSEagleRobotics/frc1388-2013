@@ -31,3 +31,9 @@ void Shooter::InitDefaultCommand() {
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
 
+void Shooter::setVoltage(float voltage) {
+	// When the CAN Jaguar is in voltage mode, the set
+	// command sets the voltage output
+	shooterMotor->Set(voltage);
+}
+
