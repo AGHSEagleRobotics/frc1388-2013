@@ -103,7 +103,23 @@ Children:
         name: Default Command, type: Command, validators: null, value: None}
   - Name: Feeder
     Base: Subsystem
-    Children: []
+    Children:
+    - Name: FeederServo
+      Base: Servo
+      Children: []
+      Properties:
+        Output Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
+          choices: &id010 ['1', '2']
+          default: '1'
+          name: Output Module (Digital)
+          validators: &id011 [PWMOutput]
+          value: '1'
+        Output Channel (PWM): !!robotbuilder.data.properties.ChoicesProperty
+          choices: &id012 ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+          default: '1'
+          name: Output Channel (PWM)
+          validators: &id013 [PWMOutput]
+          value: '6'
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Default Command, type: Command, validators: null, value: None}
@@ -170,16 +186,16 @@ Children:
       Children: []
       Properties:
         Output Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id010 ['1', '2']
+          choices: *id010
           default: '1'
           name: Output Module (Digital)
-          validators: &id011 [PWMOutput]
+          validators: *id011
           value: '1'
         Output Channel (PWM): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id012 ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+          choices: *id012
           default: '1'
           name: Output Channel (PWM)
-          validators: &id013 [PWMOutput]
+          validators: *id013
           value: '4'
     - Name: TapeAngleRight
       Base: Servo
@@ -204,7 +220,7 @@ Children:
 - Name: Operator Interface
   Base: OI
   Children:
-  - Name: DriveStick
+  - Name: RightStick
     Base: Joystick
     Children: []
     Properties:
@@ -214,7 +230,7 @@ Children:
         name: Number
         validators: &id015 [Joystick]
         value: '1'
-  - Name: CCiBoard
+  - Name: LeftStick
     Base: Joystick
     Children: []
     Properties:
@@ -224,6 +240,16 @@ Children:
         name: Number
         validators: *id015
         value: '2'
+  - Name: CCiBoard
+    Base: Joystick
+    Children: []
+    Properties:
+      Number: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id014
+        default: 1
+        name: Number
+        validators: *id015
+        value: '3'
   Properties: {}
 - Name: Commands
   Base: Commands
