@@ -47,7 +47,7 @@ clean :: external_clean $(CLEAN_STEP) _clean
 external_clean ::
 	@echo ""
 
-GIT_VERSION := $(shell git log --oneline -1 --pretty=format:%h)
+GIT_VERSION := $(shell git log -1 --pretty=format:%H)
 GIT_STATUS  := $(shell git status -z -uno)
 ifneq ("$(GIT_STATUS)", "")
   GIT_VERSION := "$(GIT_VERSION)-modified"
