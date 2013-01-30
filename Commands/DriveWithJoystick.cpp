@@ -10,6 +10,7 @@
 
 
 #include "DriveWithJoystick.h"
+#include "../SubSystems/DriveTrain.h"
 
 DriveWithJoystick::DriveWithJoystick() {
 	// Use requires() here to declare subsystem dependencies
@@ -26,7 +27,13 @@ void DriveWithJoystick::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void DriveWithJoystick::Execute() {
-	drivetrain->tankDrive();
+	
+	Joystick *leftStick = Robot::oi->getLeftStick();
+	Joystick *rightStick = Robot::oi->getRightStick();
+	float leftaxis = leftStick->GetAxis(Joystick::kXAxis);
+	float rightaxis = rightStick->GetAxis(Joystick::kXAxis);
+	
+	Robot::driveTrain->tankDrive(leftaxis, rightaxis);
 }
 
 // Make this return true when this Command no longer needs to run execute()
