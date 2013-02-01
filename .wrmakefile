@@ -49,10 +49,14 @@ external_clean ::
 
 GIT_VERSION := $(shell git log -1 --pretty=format:%h)
 GIT_STATUS  := $(shell git status -z -uno)
+GIT_TAG := 
 ifneq (,$(GIT_STATUS))
   GIT_VERSION := "$(GIT_VERSION)-modified"
+else
+  GIT_TAG := $(shell git tag --contains $(GIT_VERSION) | head -1)
 endif
 
 GitVersion.h:
 	@echo -E "Latest Commit checksum: $(GIT_VERSION)"
 	echo -E "const char* GIT_VERSION=\"$(GIT_VERSION)\";" > $(PRJ_ROOT_DIR)/GitVersion.h
+	echo -E "const char* GIT_TAG=\"$(GIT_TAG)\";" >> $(PRJ_ROOT_DIR)/GitVersion.h
