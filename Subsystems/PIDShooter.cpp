@@ -39,7 +39,6 @@ double PIDShooter::ReturnPIDInput() {
 	// Used to give a fake input to the PID so the PID gets an error
 	// and sends the conversion to the PIDWrite.
 //	return SmartDashboard::GetNumber(FakeInput);
-	
 }
 void PIDShooter::UsePIDOutput(double output) {
 	// Use output to drive your system, like a motor

@@ -318,7 +318,7 @@ Children:
           default: '2'
           name: CAN ID
           validators: [CANID]
-          value: '3'
+          value: '4'
     Properties:
       D: !!robotbuilder.data.properties.DoubleProperty {default: 0, name: D, validators: null,
         value: 0.0}
