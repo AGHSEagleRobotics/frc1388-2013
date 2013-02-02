@@ -23,7 +23,7 @@ OI* Robot::oi = 0;
  */
 Robot::Robot():
 	mDisplay(insight::TWO_ONE_LINE_ZONES),
-	disp_GitVersion("Version: ")
+	disp_GitVersion("Version:")
 //	disp_GitTag("Tag: ")
 {
 	
