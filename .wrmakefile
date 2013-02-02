@@ -50,7 +50,7 @@ external_clean ::
 GIT_VERSION := $(shell git log -1 --pretty=format:%h)
 GIT_STATUS  := $(shell git status -z -uno)
 ifneq (,$(GIT_STATUS))
-  GIT_VERSION := "$(GIT_VERSION)-modified"
+  GIT_VERSION := "$(GIT_VERSION)-mod"
 endif
 
 GitVersion.h:
