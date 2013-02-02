@@ -60,3 +60,5 @@ GitVersion.h:
 	@echo -E "Latest Commit checksum: $(GIT_VERSION)"
 	echo -E "const char* GIT_VERSION=\"$(GIT_VERSION)\";" > $(PRJ_ROOT_DIR)/GitVersion.h
 	echo -E "const char* GIT_TAG=\"$(GIT_TAG)\";" >> $(PRJ_ROOT_DIR)/GitVersion.h
+	echo -E "const char* BUILD_DATE=__DATE__;" >> $(PRJ_ROOT_DIR)/GitVersion.h
+	echo -E "const char* BUILD_TIME=__TIME__;" >> $(PRJ_ROOT_DIR)/GitVersion.h
