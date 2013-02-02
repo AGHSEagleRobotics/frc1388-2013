@@ -24,6 +24,8 @@
 #include "InsightLT/InsightLT.h"
 class Robot : public IterativeRobot {
 public:
+	Robot();
+	
 	Command *autonomousCommand;
 	static OI *oi;
 	LiveWindow *lw;
@@ -39,5 +41,11 @@ public:
 	virtual void TeleopInit();
 	virtual void TeleopPeriodic();
 	virtual void TestPeriodic();
+	
+private:
+	insight::InsightLT mDisplay;
+	insight::StringData disp_GitVersion;
+//	insight::StringData disp_GitTag;
+    void initDisplay();
 };
 #endif
