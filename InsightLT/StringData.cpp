@@ -43,8 +43,12 @@ std::string StringData::getFormattedString(char lengthOfZone)
 		}
 		else
 		{
+#ifdef JUSTIFIY_RIGHT	
 			m_formattedString = m_stringHeader + string(lengthOfZone - (m_stringHeader.length() + m_stringData.length()), ' ').
 							append(m_stringData);
+#else
+			m_formattedString = m_stringHeader + m_stringData;
+#endif
 		}	
 	}		
 	return m_formattedString;
