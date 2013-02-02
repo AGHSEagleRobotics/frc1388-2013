@@ -69,7 +69,8 @@ void Robot::RobotInit() {
 		disp_GitVersion.setData(gitVersion);
 	}		
 	// Display on NetConsole:		
-	printf("\nSW version: %s\n\n", gitVersion.c_str());
+	printf("\nSW version: %s\n", gitVersion.c_str());
+	printf("Built on %s\n\n",__DATE__);
 		
 	// Display on SmartDashboard:		
 	SmartDashboard::PutString("Software Version: ", gitVersion);
