@@ -23,7 +23,6 @@ void Feeder::InitDefaultCommand() {
 }
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
-
 void Feeder::Feed()
 {
 	feederServo->Set(0.5);
