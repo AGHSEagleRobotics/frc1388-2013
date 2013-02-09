@@ -10,8 +10,8 @@ Children:
   - Name: DriveTrain
     Base: Subsystem
     Children:
-    - Name: Robot Drive 4 1
-      Base: Robot Drive 4
+    - Name: Robot Drive
+      Base: Robot Drive 2
       Children:
       - Name: DriveLeft1
         Base: Speed Controller
@@ -35,28 +35,6 @@ Children:
             name: Output Channel (PWM)
             validators: &id005 [PWMOutput]
             value: '1'
-      - Name: DriveLeft2
-        Base: Speed Controller
-        Children: []
-        Properties:
-          Output Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-            choices: *id001
-            default: '1'
-            name: Output Module (Digital)
-            validators: *id002
-            value: '1'
-          Type: !!robotbuilder.data.properties.ChoicesProperty
-            choices: *id003
-            default: Victor
-            name: Type
-            validators: null
-            value: Victor
-          Output Channel (PWM): !!robotbuilder.data.properties.ChoicesProperty
-            choices: *id004
-            default: '1'
-            name: Output Channel (PWM)
-            validators: *id005
-            value: '2'
       - Name: DriveRight1
         Base: Speed Controller
         Children: []
@@ -79,69 +57,31 @@ Children:
             name: Output Channel (PWM)
             validators: *id005
             value: '3'
-      - Name: DriveRight2
-        Base: Speed Controller
-        Children: []
-        Properties:
-          Output Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-            choices: *id001
-            default: '1'
-            name: Output Module (Digital)
-            validators: *id002
-            value: '1'
-          Type: !!robotbuilder.data.properties.ChoicesProperty
-            choices: *id003
-            default: Victor
-            name: Type
-            validators: null
-            value: Victor
-          Output Channel (PWM): !!robotbuilder.data.properties.ChoicesProperty
-            choices: *id004
-            default: '1'
-            name: Output Channel (PWM)
-            validators: *id005
-            value: '4'
       Properties:
         Sensitivity: !!robotbuilder.data.properties.DoubleProperty {default: 0.5,
           name: Sensitivity, validators: null, value: 0.5}
-        Right Front Motor Inverted: !!robotbuilder.data.properties.BooleanProperty {
-          default: false, name: Right Front Motor Inverted, validators: null, value: false}
         Safety Enabled: !!robotbuilder.data.properties.BooleanProperty {default: true,
           name: Safety Enabled, validators: null, value: true}
-        Left Front Motor Inverted: !!robotbuilder.data.properties.BooleanProperty {
-          default: false, name: Left Front Motor Inverted, validators: null, value: false}
-        Right Front Motor: !!robotbuilder.data.properties.ChildSelectionProperty
-          default: 2
-          name: Right Front Motor
+        Left Motor Inverted: !!robotbuilder.data.properties.BooleanProperty {default: false,
+          name: Left Motor Inverted, validators: null, value: false}
+        Right Motor: !!robotbuilder.data.properties.ChildSelectionProperty
+          default: 1
+          name: Right Motor
           type: PIDOutput
-          validators: [RobotDrive4, ChildDropdownSelected]
+          validators: [RobotDrive2, ChildDropdownSelected]
           value: DriveTrain DriveRight1
         Maximum Output: !!robotbuilder.data.properties.DoubleProperty {default: 1,
           name: Maximum Output, validators: null, value: 1.0}
-        Right Rear Motor Inverted: !!robotbuilder.data.properties.BooleanProperty {
-          default: false, name: Right Rear Motor Inverted, validators: null, value: false}
-        Left Rear Motor Inverted: !!robotbuilder.data.properties.BooleanProperty {
-          default: false, name: Left Rear Motor Inverted, validators: null, value: false}
-        Right Rear Motor: !!robotbuilder.data.properties.ChildSelectionProperty
-          default: 3
-          name: Right Rear Motor
-          type: PIDOutput
-          validators: [RobotDrive4, ChildDropdownSelected]
-          value: DriveTrain DriveRight2
-        Left Rear Motor: !!robotbuilder.data.properties.ChildSelectionProperty
-          default: 1
-          name: Left Rear Motor
-          type: PIDOutput
-          validators: [RobotDrive4, ChildDropdownSelected]
-          value: DriveTrain DriveLeft2
-        Left Front Motor: !!robotbuilder.data.properties.ChildSelectionProperty
+        Left Motor: !!robotbuilder.data.properties.ChildSelectionProperty
           default: 0
-          name: Left Front Motor
+          name: Left Motor
           type: PIDOutput
-          validators: [RobotDrive4, ChildDropdownSelected]
+          validators: [RobotDrive2, ChildDropdownSelected]
           value: DriveTrain DriveLeft1
+        Right Motor Inverted: !!robotbuilder.data.properties.BooleanProperty {default: false,
+          name: Right Motor Inverted, validators: null, value: false}
         Safety Expiration Time: !!robotbuilder.data.properties.DoubleProperty {default: 0.1,
-          name: Safety Expiration Time, validators: null, value: 0.1}
+          name: Safety Expiration Time, validators: null, value: 0.25}
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Default Command, type: Command, validators: null, value: None}
@@ -487,6 +427,6 @@ Properties:
     validators: null, value: 1388}
   Export Commands: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Commands, validators: null, value: true}
-  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Documents
-      and Settings\Eagle Robotics\NetBeansProjects', extension: null, folder: true,
-    name: Java Project Directory, validators: null, value: 'C:\Users\Davey\NetBeansProjects'}
+  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\Davey\NetBeansProjects',
+    extension: null, folder: true, name: Java Project Directory, validators: null,
+    value: 'C:\Users\Davey\NetBeansProjects'}
