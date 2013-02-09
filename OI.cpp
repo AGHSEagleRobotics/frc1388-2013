@@ -57,3 +57,8 @@ bool OI::returnRightTrigger()
 {
 	return rightStick->GetTrigger();
 }
+
+float OI::returnRightXAxis()
+{
+	return rightStick->GetAxis(Joystick::kXAxis);
+}

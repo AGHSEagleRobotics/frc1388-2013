@@ -25,9 +25,19 @@ void DriveWithJoystick::Execute() {
 	
 	Joystick *leftStick = Robot::oi->getLeftStick();
 	Joystick *rightStick = Robot::oi->getRightStick();
-	float leftaxis = leftStick->GetAxis(Joystick::kXAxis);
-	float rightaxis = rightStick->GetAxis(Joystick::kXAxis);
 	
+	float leftaxis = leftStick->GetAxis(Joystick::kYAxis);
+	float rightaxis = rightStick->GetAxis(Joystick::kYAxis);
+		
+	if((leftaxis < 0.1) && (leftaxis > -0.1))
+		leftaxis = 0;
+	
+	if((rightaxis < 0.1) && (rightaxis > -0.1))
+		rightaxis = 0;	
+
+//	printf("leftaxis: %f \n", leftaxis);
+//	printf("rightaxis: %f \n", rightaxis);
+
 //	printf("DriveWithJoystick is running\n");
 	
 //	printf("driveTrain is:%x\n",Robot::driveTrain);
