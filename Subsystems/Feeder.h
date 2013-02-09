@@ -27,5 +27,6 @@ public:
 	Feeder();
 	void InitDefaultCommand();
 	void Feed();
+	void Reset();
 };
 #endif

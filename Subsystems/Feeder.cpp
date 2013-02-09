@@ -27,3 +27,8 @@ void Feeder::Feed()
 {
 	feederServo->Set(0.5);
 }
+
+void Feeder::Reset()
+{
+	feederServo->Set(0.0);
+}

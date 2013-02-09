@@ -28,7 +28,8 @@ bool Feed::IsFinished() {
 	return false;
 }
 // Called once after isFinished returns true
-void Feed::End() {
+void Feed::End()
+{
 	
 }
 // Called when another command which requires one or more of the same

@@ -15,7 +15,7 @@
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
-
+#include <Timer.h>
 /**
  *
  *
@@ -29,6 +29,7 @@ public:
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
+	Timer* timer;
 };
 
 #endif
