@@ -25,6 +25,8 @@ OI::OI() {
 	
 	rightStick = new Joystick(1);
 	
+	shootNow = new JoystickButton(rightStick, 1);
+	shootNow->WhileHeld(new Shoot());
      
         // SmartDashboard Buttons
 	SmartDashboard::PutData("Autonomous Command", new AutonomousCommand());

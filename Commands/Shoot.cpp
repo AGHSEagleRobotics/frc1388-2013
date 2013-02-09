@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 #include "Shoot.h"
-Feeder* feeder;
-
 Shoot::Shoot() {
 	// Use requires() here to declare subsystem dependencies
 	// eg. requires(chassis);
@@ -25,11 +23,13 @@ void Shoot::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void Shoot::Execute()
 {
-	
-	feeder->Feed();
+	Robot::feeder->Feed();
+	printf("disc shot\n");
 }
 // Make this return true when this Command no longer needs to run execute()
-bool Shoot::IsFinished() {
+bool Shoot::IsFinished()
+{
+	printf("DISC SHOT!\n");
 	return false;
 }
 // Called once after isFinished returns true
