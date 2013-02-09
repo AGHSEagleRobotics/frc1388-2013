@@ -52,3 +52,8 @@ double OI::returnRightYAxis()
 	double yAxis = rightStick->kYAxis;
 	return yAxis;
 }
+
+bool OI::returnRightTrigger()
+{
+	return rightStick->GetTrigger();
+}
