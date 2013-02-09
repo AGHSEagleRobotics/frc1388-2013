@@ -42,8 +42,8 @@ void RobotMap::init() {
 	driveTrainRobotDrive41 = new RobotDrive(driveTrainDriveLeft1, driveTrainDriveLeft2,
               driveTrainDriveRight1, driveTrainDriveRight2);
 	
-	driveTrainRobotDrive41->SetSafetyEnabled(true);
-        driveTrainRobotDrive41->SetExpiration(0.1);
+	driveTrainRobotDrive41->SetSafetyEnabled(false);
+        //driveTrainRobotDrive41->SetExpiration(0.5);
         driveTrainRobotDrive41->SetSensitivity(0.5);
         driveTrainRobotDrive41->SetMaxOutput(1.0);
 	feederFeederServo = new Servo(1, 8);
