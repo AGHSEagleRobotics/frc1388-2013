@@ -29,7 +29,8 @@ public:
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
-	Timer* timer;
+	Timer timer;
+	float timeCount;
 };
 
 #endif

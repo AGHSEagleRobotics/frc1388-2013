@@ -20,26 +20,34 @@ void Shoot::Initialize()
 {
 	printf("disc shot\n");
 	
-	if(timer == NULL)
-		timer = new Timer;
-	
-	timer->Reset();
-	timer->Start();
+	timer.Reset();
+	timer.Start();
 }
 // Called repeatedly when this Command is scheduled to run
 void Shoot::Execute()
 {
-	Robot::feeder->Feed();
-
+	Robot::feeder->Feed();	
+	
 }
 // Make this return true when this Command no longer needs to run execute()
 bool Shoot::IsFinished()
 {	
-	if(timer->Get() > 0.5)
+	bool trigger = Robot::oi->returnRightTrigger();
+	timeCount = timer.Get();
+
+	printf("Time: %f \n", timeCount);
+
+	if((trigger == false) && (timeCount > 0.6))
 		return true;
 	else
 		return false;
+
+//	printf("Time: %f", timer.Get());
 	
+//	if(timer.Get() > 0.5)
+//		return true;
+//	else
+//		return false;	
 }
 // Called once after isFinished returns true
 void Shoot::End()
