@@ -28,7 +28,13 @@ void DriveWithJoystick::Execute() {
 	float leftaxis = leftStick->GetAxis(Joystick::kXAxis);
 	float rightaxis = rightStick->GetAxis(Joystick::kXAxis);
 	
+//	printf("DriveWithJoystick is running\n");
+	
+//	printf("driveTrain is:%x\n",Robot::driveTrain);
+	
 	Robot::driveTrain->tankDrive(leftaxis, rightaxis);
+	
+//	printf("Did it crash?\n");
 }
 // Make this return true when this Command no longer needs to run execute()
 bool DriveWithJoystick::IsFinished() {

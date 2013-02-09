@@ -123,7 +123,7 @@
             <stringAttribute key="BLD::Info|Tool|C++-Compiler|flags|PPC32diab" value="$(CC_ARCH_SPEC) -W:c:,-Xclib-optim-off -Xansi -Xlocal-data-area-static-only -Xforce-declarations  -Xmake-dependency=0xd"/>
             <stringAttribute key="BLD::Info|Tool|C++-Compiler|flags|PPC32gnu" value="$(CC_ARCH_SPEC) -ansi -Wall  -MD -MP"/>
             <stringAttribute key="BLD::Info|Tool|C++-Compiler|flags|PPC603diab" value="$(CC_ARCH_SPEC) -W:c:,-Xclib-optim-off -Xansi -Xlocal-data-area-static-only -Xforce-declarations  -Xmake-dependency=0xd"/>
-            <stringAttribute key="BLD::Info|Tool|C++-Compiler|flags|PPC603gnu" value="$(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall -Werror"/>
+            <stringAttribute key="BLD::Info|Tool|C++-Compiler|flags|PPC603gnu" value="$(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall "/>
             <stringAttribute key="BLD::Info|Tool|C++-Compiler|nonDbgFlags|PPC32diab" value="-XO -Xsize-opt"/>
             <stringAttribute key="BLD::Info|Tool|C++-Compiler|nonDbgFlags|PPC32gnu" value="-O2 -fstrength-reduce -fno-builtin"/>
             <stringAttribute key="BLD::Info|Tool|C++-Compiler|nonDbgFlags|PPC603diab" value="-XO -Xsize-opt"/>
