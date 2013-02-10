@@ -91,14 +91,12 @@ void Robot::TeleopInit() {
 	// this line or comment it out.
 	autonomousCommand->Cancel();
 	(new DriveWithJoystick())->Start();
-
+	(new runTheShooter())->Start();
 }
 	
 void Robot::TeleopPeriodic() {
 	if (autonomousCommand != NULL)
 		Scheduler::GetInstance()->Run();
-	
-	(new runTheShooter())->Start();
 	
 //	float value = Robot::oi->returnRightXAxis();
 //	
