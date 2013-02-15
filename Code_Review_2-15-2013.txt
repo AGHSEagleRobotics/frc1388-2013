@@ -1,0 +1,11 @@
+Added #define's to shooter subsystem and driveWithJoystick so that
+the values easily idenitfied and changed if need be.
+
+
+Deleted Feeder because it was redundant with the command Shoot.
+
+
+Deleted runTheShooter becuase Jarrett reworked the Shooter code and broke it up into a subsystem called
+Shooter and made functions that did the same thing as runTheShooter.
+
+

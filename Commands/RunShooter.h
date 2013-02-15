@@ -9,8 +9,8 @@
 // it from being updated in th future.
 
 
-#ifndef RUNTHESHOOTER_H
-#define RUNTHESHOOTER_H
+#ifndef RUNSHOOTER_H
+#define RUNSHOOTER_H
 
 
 #include "Commands/Subsystem.h"
@@ -21,9 +21,9 @@
  *
  * @author ExampleAuthor
  */
-class runTheShooter: public Command {
+class RunShooter: public Command {
 public:
-	runTheShooter();
+	RunShooter();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

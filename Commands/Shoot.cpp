@@ -34,14 +34,11 @@ bool Shoot::IsFinished()
 {	
 	bool trigger = Robot::oi->returnRightTrigger();
 	timeCount = timer.Get();
-
 	printf("Time: %f \n", timeCount);
-
 	if((trigger == false) && (timeCount > 0.6))
 		return true;
 	else
 		return false;
-
 //	printf("Time: %f", timer.Get());
 	
 //	if(timer.Get() > 0.5)

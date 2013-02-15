@@ -9,8 +9,8 @@
 // it from being updated in th future.
 
 
-#ifndef FEED_H
-#define FEED_H
+#ifndef VOLTAGEDECREASE_H
+#define VOLTAGEDECREASE_H
 
 
 #include "Commands/Subsystem.h"
@@ -21,9 +21,9 @@
  *
  * @author ExampleAuthor
  */
-class Feed: public Command {
+class VoltageDecrease: public Command {
 public:
-	Feed();
+	VoltageDecrease();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
