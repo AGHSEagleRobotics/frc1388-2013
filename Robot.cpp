@@ -101,7 +101,7 @@ void Robot::TeleopPeriodic() {
 	if (autonomousCommand != NULL)
 		Scheduler::GetInstance()->Run();
 	
-	printf("VoltageOut: %f \n", Robot::shooter->voltageOut);
+//	printf("VoltageOut: %f \n", Robot::shooter->voltageOut);
 	
 	// Get the voltage from the Shooter Jag
 	SmartDashboard::PutNumber("ShooterVoltage", Robot::shooter->getVoltage());

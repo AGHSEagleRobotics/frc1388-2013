@@ -62,7 +62,6 @@ void Shooter::increaseVoltage()
 void Shooter::decreaseVoltage()
 {
 	voltageOut = voltageOut - INCREMENT;
-
 	if(isShooterRunning)
 		shooterMotor->Set(voltageOut);
 }

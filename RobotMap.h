@@ -23,7 +23,7 @@ public:
 	static SpeedController* driveTrainDriveRight1;
 	static RobotDrive* driveTrainRobotDrive;
 	static AnalogChannel* driveTrainultrasonicDistance;
-	static Servo* feederFeederServo;
+	static SpeedController* feederFeederMotor;
 	static SpeedController* climberClimberMotor;
 	static DigitalInput* climberTapeLimitLeft;
 	static DigitalInput* climberTapeLimitRight;

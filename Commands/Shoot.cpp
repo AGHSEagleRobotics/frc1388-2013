@@ -36,7 +36,7 @@ bool Shoot::IsFinished()
 	timeCount = timer.Get();
 	printf("Time: %f \n", timeCount);
 	
-	if((trigger == false) && (timeCount > 0.6))
+	if((trigger == false) && (timeCount > 1))
 		return true;
 	else
 		return false;
