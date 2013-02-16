@@ -231,7 +231,7 @@ Children:
           value: '4'
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Default Command, type: Command, validators: null, value: RunDefaultVoltage}
+        name: Default Command, type: Command, validators: null, value: None}
   Properties: {}
 - Name: Operator Interface
   Base: OI
@@ -299,7 +299,7 @@ Children:
           default: '1'
           name: Button
           validators: null
-          value: '3'
+          value: '6'
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: OpStick}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
@@ -323,7 +323,7 @@ Children:
           default: '1'
           name: Button
           validators: null
-          value: '3'
+          value: '7'
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: OpStick}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
@@ -347,7 +347,7 @@ Children:
           default: '1'
           name: Button
           validators: null
-          value: '7'
+          value: '10'
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: OpStick}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
@@ -371,7 +371,7 @@ Children:
           default: '1'
           name: Button
           validators: null
-          value: '6'
+          value: '11'
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: OpStick}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
