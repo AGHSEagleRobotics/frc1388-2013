@@ -8,6 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 #include "RunShooter.h"
+#define DEFAULT_VOLTAGE (7.31)
+#define INCREMENT (0.1)
 RunShooter::RunShooter() {
 	// Use requires() here to declare subsystem dependencies
 	// eg. requires(chassis);
@@ -17,24 +19,41 @@ RunShooter::RunShooter() {
 }
 // Called just before this Command runs the first time
 void RunShooter::Initialize() {
-	
+	Robot::shooter->runTheShooter();
 }
 // Called repeatedly when this Command is scheduled to run
-void RunShooter::Execute() {
-	Robot::shooter->runConstVoltage();
-	printf("Control Mode: %d Voltage: %f Speed: %f Current: %f\n",
-				 RobotMap::shootershooterMotor->GetControlMode(),
-				 RobotMap::shootershooterMotor->GetOutputVoltage(),
-				 RobotMap::shootershooterMotor->GetSpeed(),
-				 RobotMap::shootershooterMotor->GetOutputCurrent());
-}
+void RunShooter::Execute() {	
+	printf("Voltage out from RunShooter: %f \n", Robot::shooter->getVoltage());
+	
+//	voltage = Robot::shooter->getVoltage();
+//	
+//	if(Robot::oi->getOpStick()->GetRawButton(3))
+//		voltage = voltage + INCREMENT;
+//
+//	if(Robot::oi->getOpStick()->GetRawButton(2))
+//		voltage = voltage - INCREMENT;
+//	
+//	Robot::shooter->runTheShooter(voltage);
+	
+//	printf("Control Mode: %d Voltage: %f Speed: %f Current: %f\n",
+//				 RobotMap::shootershooterMotor->GetControlMode(),
+//				 RobotMap::shootershooterMotor->GetOutputVoltage(),
+//				 RobotMap::shootershooterMotor->GetSpeed(),
+//				 RobotMap::shootershooterMotor->GetOutputCurrent());
+}	
 // Make this return true when this Command no longer needs to run execute()
-bool RunShooter::IsFinished() {
+bool RunShooter::IsFinished()
+{
+//	if(Robot::oi->getOpStick()->GetRawButton(7))
+//		return true;
+//	else
+//		return false;
+	
 	return false;
 }
 // Called once after isFinished returns true
 void RunShooter::End() {
-	
+	Robot::shooter->stopTheShooter();
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run

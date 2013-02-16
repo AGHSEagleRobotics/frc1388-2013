@@ -9,8 +9,8 @@
 // it from being updated in th future.
 
 
-#ifndef RUNSHOOTER_H
-#define RUNSHOOTER_H
+#ifndef RUNDEFAULTVOLTAGE_H
+#define RUNDEFAULTVOLTAGE_H
 
 
 #include "Commands/Subsystem.h"
@@ -21,16 +21,14 @@
  *
  * @author ExampleAuthor
  */
-class RunShooter: public Command {
+class RunDefaultVoltage: public Command {
 public:
-	RunShooter();
+	RunDefaultVoltage();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
-	float voltage;
-	
 };
 
 #endif

@@ -16,15 +16,14 @@ StopShooter::StopShooter() {
 }
 // Called just before this Command runs the first time
 void StopShooter::Initialize() {
-	
+	Robot::shooter->stopTheShooter();	
 }
 // Called repeatedly when this Command is scheduled to run
 void StopShooter::Execute() {
-	Robot::shooter->stopTheShooter();
 }
 // Make this return true when this Command no longer needs to run execute()
 bool StopShooter::IsFinished() {
-	return false;
+	return true;
 }
 // Called once after isFinished returns true
 void StopShooter::End() {
