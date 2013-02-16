@@ -21,6 +21,16 @@ void Climb::Initialize() {
 }
 // Called repeatedly when this Command is scheduled to run
 void Climb::Execute() {
+	Joystick* opstick = Robot::oi->getOpStick();
+	
+	float opsticky = opstick->GetAxis(Joystick::kYAxis);
+	float opstickx = opstick->GetAxis(Joystick::kXAxis);
+	bool opTapesIn = opstick->GetRawButton(2);
+	bool opTapesOut = opstick->GetRawButton(3);
+	
+	Robot::climber->TapesInOut(opstickx, opTapesIn, opTapesOut);
+	Robot::climber->TapesUpDown(opsticky);
+	
 	
 }
 // Make this return true when this Command no longer needs to run execute()
