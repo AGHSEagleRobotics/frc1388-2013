@@ -8,8 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 #include "RunShooter.h"
-#define DEFAULT_VOLTAGE (7.31)
-#define INCREMENT (0.1)
+//#define DEFAULT_VOLTAGE (7.31)
+//#define INCREMENT (0.1)
 RunShooter::RunShooter() {
 	// Use requires() here to declare subsystem dependencies
 	// eg. requires(chassis);
@@ -49,11 +49,10 @@ bool RunShooter::IsFinished()
 //	else
 //		return false;
 	
-	return false;
+	return true;
 }
 // Called once after isFinished returns true
 void RunShooter::End() {
-	Robot::shooter->stopTheShooter();
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run

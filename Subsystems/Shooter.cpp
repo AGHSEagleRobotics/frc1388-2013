@@ -45,20 +45,26 @@ void Shooter::InitDefaultCommand() {
 void Shooter::runTheShooter()
 {
 	shooterMotor->Set(voltageOut);
+	isShooterRunning = true;
 }
 void Shooter::stopTheShooter()
 {
 	shooterMotor->Set(0);
+	isShooterRunning = false;
 }
 void Shooter::increaseVoltage()
 {
 	voltageOut = voltageOut + INCREMENT;
-	shooterMotor->Set(voltageOut);
+	
+	if(isShooterRunning)
+		shooterMotor->Set(voltageOut);
 }
 void Shooter::decreaseVoltage()
 {
 	voltageOut = voltageOut - INCREMENT;
-	shooterMotor->Set(voltageOut);
+
+	if(isShooterRunning)
+		shooterMotor->Set(voltageOut);
 }
 void Shooter::runDefaultVoltage()
 {			
