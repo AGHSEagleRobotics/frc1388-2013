@@ -1,0 +1,31 @@
+battvoltage
+distance from ultra
+current shooter voltage
+swversion
+
+
+
+battvoltage:
+from driverstation....
+
+hook up voltmeter?
+
+
+
+
+ultrasonic
+
+
+
+
+
+4 10 digit zones
+
+Batt:xx.xx Dist:xx.xx
+Shoot:x.xx xxxxxxx-mo
+
+If no driverstation, disp "--NoDash--"
+
+
+Battery Voltage
+jaguar float GetBusVoltage()
