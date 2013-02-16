@@ -3,20 +3,11 @@ distance from ultra
 current shooter voltage
 swversion
 
-
-
 battvoltage:
 from driverstation....
-
 hook up voltmeter?
 
-
-
-
 ultrasonic
-
-
-
 
 
 4 10 digit zones
