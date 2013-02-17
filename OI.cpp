@@ -35,6 +35,8 @@ OI::OI() {
 	increaseVoltage->WhenPressed(new VoltageIncrease());
 	leftStick = new Joystick(2);
 	
+	shootNowLeft = new JoystickButton(leftStick, 1);
+	shootNowLeft->WhenPressed(new Shoot());
 	rightStick = new Joystick(1);
 	
 	shootNow = new JoystickButton(rightStick, 1);
@@ -69,6 +71,10 @@ double OI::returnRightYAxis()
 bool OI::returnRightTrigger()
 {
 	return rightStick->GetTrigger();
+}
+bool OI::returnLeftTrigger()
+{
+	return leftStick->GetTrigger();
 }
 float OI::returnRightXAxis()
 {

@@ -31,6 +31,8 @@ public:
 	virtual void Interrupted();
 	Timer timer;
 	float timeCount;
+	bool rightTrigger;
+	bool leftTrigger;
 };
 
 #endif

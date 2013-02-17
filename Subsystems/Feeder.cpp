@@ -25,10 +25,13 @@ void Feeder::InitDefaultCommand() {
 // here. Call these from Commands.
 void Feeder::Feed()
 {
-	feederServo->Set(1.0);
-	printf("I'm Feeding!");
+	feederMotor->Set(-2.0);
 }
 void Feeder::Reset()
 {
-	feederServo->Set(0.0);
+	feederMotor->Set(2.0);
+}
+void Feeder::turnOff()
+{
+	feederMotor->Set(0.0);
 }

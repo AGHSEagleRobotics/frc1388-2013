@@ -26,20 +26,24 @@ void Shoot::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void Shoot::Execute()
 {
-	Robot::feeder->Feed();	
+	if((timeCount > 0.9))
+		Robot::feeder->Reset();
+	else
+		Robot::feeder->Feed();
 	
 }
 // Make this return true when this Command no longer needs to run execute()
 bool Shoot::IsFinished()
 {	
-	bool trigger = Robot::oi->returnRightTrigger();
+	rightTrigger = Robot::oi->returnRightTrigger();
+	leftTrigger = Robot::oi->returnLeftTrigger();
 	timeCount = timer.Get();
-	printf("Time: %f \n", timeCount);
 	
-	if((trigger == false) && (timeCount > 1))
-		return true;
-	else
-		return false;
+	if(((leftTrigger == false) && (rightTrigger == false)) && (timeCount > 1.5))
+			return true;
+		else
+			return false;
+	
 //	printf("Time: %f", timer.Get());
 	
 //	if(timer.Get() > 0.5)
@@ -50,8 +54,7 @@ bool Shoot::IsFinished()
 // Called once after isFinished returns true
 void Shoot::End()
 {
-	printf("The End! \n");
-	Robot::feeder->Reset();
+	Robot::feeder->turnOff();
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run

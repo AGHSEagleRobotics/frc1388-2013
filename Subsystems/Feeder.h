@@ -28,5 +28,6 @@ public:
 	void InitDefaultCommand();
 	void Feed();
 	void Reset();
+	void turnOff();
 };
  #endif
