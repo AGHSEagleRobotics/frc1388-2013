@@ -14,7 +14,7 @@ SpeedController* RobotMap::driveTrainDriveLeft1 = NULL;
 SpeedController* RobotMap::driveTrainDriveRight1 = NULL;
 RobotDrive* RobotMap::driveTrainRobotDrive = NULL;
 AnalogChannel* RobotMap::driveTrainultrasonicDistance = NULL;
-Servo* RobotMap::feederFeederServo = NULL;
+SpeedController* RobotMap::feederFeederMotor = NULL;
 SpeedController* RobotMap::climberClimberMotor = NULL;
 DigitalInput* RobotMap::climberTapeLimitLeft = NULL;
 DigitalInput* RobotMap::climberTapeLimitRight = NULL;
@@ -41,8 +41,8 @@ void RobotMap::init() {
 	driveTrainultrasonicDistance = new AnalogChannel(1, 1);
 	lw->AddSensor("DriveTrain", "ultrasonicDistance", driveTrainultrasonicDistance);
 	
-	feederFeederServo = new Servo(1, 8);
-	lw->AddActuator("Feeder", "FeederServo", feederFeederServo);
+	feederFeederMotor = new Victor(1, 2);
+	lw->AddActuator("Feeder", "FeederMotor", (Victor*) feederFeederMotor);
 	
 	climberClimberMotor = new Victor(1, 5);
 	lw->AddActuator("Climber", "ClimberMotor", (Victor*) climberClimberMotor);
