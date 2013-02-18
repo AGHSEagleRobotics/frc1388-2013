@@ -29,7 +29,7 @@ void Climb::Execute() {
 	bool opTapesOut = opstick->GetRawButton(3);
 	
 	Robot::climber->TapesInOut(opstickx, opTapesIn, opTapesOut);
-	Robot::climber->TapesUpDown(opsticky);
+	Robot::climber->TapesUpDown(opsticky, opTapesIn);
 	
 	
 }

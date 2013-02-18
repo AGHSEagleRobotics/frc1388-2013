@@ -31,6 +31,6 @@ public:
 	Climber();
 	void InitDefaultCommand();
 	void TapesInOut(float opstickx, bool opTapesIn, bool opTapesOut);
-	void TapesUpDown(float opsticky);
+	void TapesUpDown(float opsticky, bool opTapesIn);
 };
 #endif

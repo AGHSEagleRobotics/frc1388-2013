@@ -44,7 +44,7 @@ void Robot::GlobalInit()
 }
 void Robot::GlobalPeriodic()
 {
-	printf("Checking the timer. \n");
+	// printf("Checking the timer. \n");
 	timesinceinit = time.Get();
 	if(timesinceinit > 10)
 	{
@@ -59,7 +59,7 @@ void Robot::GlobalPeriodic()
 	}
 	else
 	{
-		printf("Not 10 seconds yet \n");
+		// printf("Not 10 seconds yet \n");
 	}
 	
 }
@@ -112,7 +112,7 @@ void Robot::DisabledInit(){
 
 void Robot::DisabledPeriodic(){
 	GlobalPeriodic();
-	printf("DisabledPeriodic \n");
+	// printf("DisabledPeriodic \n");
 }
 
 void Robot::AutonomousInit() {

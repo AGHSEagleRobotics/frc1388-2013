@@ -56,18 +56,29 @@ else if (opTapesOut == true)
 	{
 		
 		climberMotor->Set(CLIMBER_MOTOR_POWER);
+		
 	}
 else 
 	{
 		
 		climberMotor->Set(0);
 	}
+
 }
-void Climber::TapesUpDown(float opsticky)
+void Climber::TapesUpDown(float opsticky, bool opTapesIn)
 	{        
 		int makepositive = 1;
-		float scalingfactor = .25; //take the value range from 0-2 to 1/4 of that to be between 0-1 for input
-		opsticky = (opsticky + makepositive)*scalingfactor;
-		tapeAngleLeft->Set(opsticky);        
-		tapeAngleRight->Set(opsticky);
+		float scalingfactor = .35; //take the value range from 0-2 to 1/4 of that to be between 0-1 for input
+		opsticky = (opsticky + makepositive)*scalingfactor;		
+		
+		if (opTapesIn == true){
+			
+		tapeAngleLeft->SetOffline();       
+		tapeAngleRight->SetOffline();
+		
+		}
+		else {
+			tapeAngleLeft->Set(opsticky);
+			tapeAngleRight->Set(opsticky);
+		}
 	}
