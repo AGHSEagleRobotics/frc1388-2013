@@ -46,7 +46,10 @@ void Climber::TapesInOut(float opstickx, bool opTapesIn, bool opTapesOut){
 */		
 	// && tapeLimitLeft == false && tapeLimitRight == false FOR LATE
 	
+<<<<<<< HEAD
 
+=======
+>>>>>>> b1022992595f18c9b629a70617d89ce35115d77e
 if (opTapesIn == true )
 	{
 		
