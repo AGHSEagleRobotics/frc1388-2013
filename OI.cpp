@@ -33,11 +33,11 @@ OI::OI() {
 	decreaseVoltage->WhenPressed(new VoltageDecrease());
 	increaseVoltage = new JoystickButton(opStick, 6);
 	increaseVoltage->WhenPressed(new VoltageIncrease());
-	leftStick = new Joystick(2);
+	leftStick = new Joystick(1);
 	
 	shootNowLeft = new JoystickButton(leftStick, 1);
 	shootNowLeft->WhenPressed(new Shoot());
-	rightStick = new Joystick(1);
+	rightStick = new Joystick(2);
 	
 	shootNow = new JoystickButton(rightStick, 1);
 	shootNow->WhenPressed(new Shoot());

@@ -40,7 +40,6 @@ void Robot::GlobalInit()
 		mDisplay.startDisplay();
 		disp_GitVersion.setData(GIT_VERSION);
 		disp_BuildDate.setData(BUILD_DATE);
-
 }
 void Robot::GlobalPeriodic()
 {
@@ -109,12 +108,10 @@ void Robot::RobotInit() {
 void Robot::DisabledInit(){
 	GlobalInit();
 }
-
 void Robot::DisabledPeriodic(){
 	GlobalPeriodic();
 	// printf("DisabledPeriodic \n");
 }
-
 void Robot::AutonomousInit() {
 	GlobalInit();
 	if (autonomousCommand != NULL)
@@ -135,6 +132,8 @@ void Robot::TeleopInit() {
 	// this line or comment it out.
 	autonomousCommand->Cancel();
 	(new RunShooter())->Start();
+	//SmartDashboard::PutNumber("shooteradded", )
+	
 }
 void Robot::TeleopPeriodic() {
 	GlobalPeriodic();
@@ -150,6 +149,8 @@ void Robot::TeleopPeriodic() {
 	SmartDashboard::PutNumber("Distance",Robot::driveTrain->getDistance());
 	
 	
+
+	//SmartDashboard::GetNumber("")
 //	float value = Robot::oi->returnRightXAxis();
 //	
 //	printf("CAN set to %f \n", value);
@@ -159,11 +160,9 @@ void Robot::TeleopPeriodic() {
 //	
 //	RobotMap::shooterMotor->Set(value);
 }
-
 void Robot::TestInit(){
 	GlobalInit();
 }
-
 void Robot::TestPeriodic() {
 	GlobalPeriodic();
 	lw->Run();
