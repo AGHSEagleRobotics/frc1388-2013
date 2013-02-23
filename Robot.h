@@ -58,7 +58,9 @@ private:
 	float shootvoltage;
 	float distance;
 	Timer time;
+	Timer period;
 	float timesinceinit;
+	bool hasperiodpassed;
     void GlobalInit();
     void GlobalPeriodic();
 };
