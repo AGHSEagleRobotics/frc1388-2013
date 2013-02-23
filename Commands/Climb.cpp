@@ -27,10 +27,12 @@ void Climb::Execute() {
 	float opstickx = opstick->GetAxis(Joystick::kXAxis);
 	bool opTapesIn = opstick->GetRawButton(2);
 	bool opTapesOut = opstick->GetRawButton(3);
+	bool TapesEnabled = true;
+	Robot::climber->TapesInOut(opstickx, opTapesIn, opTapesOut, TapesEnabled);
+	Robot::climber->TapesUpDown(opsticky, opTapesIn, opTapesOut, TapesEnabled);
 	
-	Robot::climber->TapesInOut(opstickx, opTapesIn, opTapesOut);
-	Robot::climber->TapesUpDown(opsticky, opTapesIn);
 	
+			
 	
 }
 // Make this return true when this Command no longer needs to run execute()

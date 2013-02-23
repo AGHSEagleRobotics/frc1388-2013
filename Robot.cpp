@@ -35,7 +35,6 @@ Robot::Robot():
 }
 void Robot::GlobalInit()
 {
-
 }
 void Robot::GlobalPeriodic()
 {
@@ -131,12 +130,10 @@ void Robot::DisabledInit(){
 	GlobalInit();
 //	printf("DisabledInit \n");
 }
-
 void Robot::DisabledPeriodic(){
 	GlobalPeriodic();
 //	printf("DisabledPeriodic \n");
 }
-
 void Robot::AutonomousInit() {
 	GlobalInit();
 	if (autonomousCommand != NULL)
@@ -157,6 +154,8 @@ void Robot::TeleopInit() {
 	// this line or comment it out.
 	autonomousCommand->Cancel();
 	(new RunShooter())->Start();
+	//SmartDashboard::PutNumber("shooteradded", )
+	
 }
 void Robot::TeleopPeriodic() {
 	GlobalPeriodic();
@@ -164,6 +163,8 @@ void Robot::TeleopPeriodic() {
 		Scheduler::GetInstance()->Run();
 	
 	
+
+	//SmartDashboard::GetNumber("")
 //	float value = Robot::oi->returnRightXAxis();
 //	
 //	printf("CAN set to %f \n", value);
@@ -173,11 +174,9 @@ void Robot::TeleopPeriodic() {
 //	
 //	RobotMap::shooterMotor->Set(value);
 }
-
 void Robot::TestInit(){
 	GlobalInit();
 }
-
 void Robot::TestPeriodic() {
 	GlobalPeriodic();
 	lw->Run();
