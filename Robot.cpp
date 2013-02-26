@@ -50,7 +50,7 @@ void Robot::GlobalPeriodic()
 	distance = Robot::driveTrain->getDistance();
 //	printf("Get BattVoltage");
 	battvoltage = DriverStation::GetInstance()->GetBatteryVoltage();
-	
+
 	
 	if((timesinceinit > 10) && (hasperiodpassed == true))
 	{
@@ -71,6 +71,12 @@ void Robot::GlobalPeriodic()
 	// Update the SmartDashboard
 	SmartDashboard::PutNumber("ShooterVoltage", shootvoltage);
 	SmartDashboard::PutNumber("Distance",distance);
+	SmartDashboard::PutNumber("Battery Voltage", battvoltage);
+	if(shooter->isMotorRunning() == true)
+		SmartDashboard::PutBoolean("Shooter", true);
+	else
+		SmartDashboard::PutBoolean("Shooter", false);
+
 }
 void Robot::RobotInit() {
 	GlobalInit();

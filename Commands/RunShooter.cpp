@@ -22,19 +22,8 @@ void RunShooter::Initialize() {
 	Robot::shooter->runTheShooter();
 }
 // Called repeatedly when this Command is scheduled to run
-void RunShooter::Execute() {	
-	printf("Voltage out from RunShooter: %f \n", Robot::shooter->getVoltage());
-	
-//	voltage = Robot::shooter->getVoltage();
-//	
-//	if(Robot::oi->getOpStick()->GetRawButton(3))
-//		voltage = voltage + INCREMENT;
-//
-//	if(Robot::oi->getOpStick()->GetRawButton(2))
-//		voltage = voltage - INCREMENT;
-//	
-//	Robot::shooter->runTheShooter(voltage);
-	
+void RunShooter::Execute()
+{		
 //	printf("Control Mode: %d Voltage: %f Speed: %f Current: %f\n",
 //				 RobotMap::shootershooterMotor->GetControlMode(),
 //				 RobotMap::shootershooterMotor->GetOutputVoltage(),
@@ -44,11 +33,6 @@ void RunShooter::Execute() {
 // Make this return true when this Command no longer needs to run execute()
 bool RunShooter::IsFinished()
 {
-//	if(Robot::oi->getOpStick()->GetRawButton(7))
-//		return true;
-//	else
-//		return false;
-	
 	return true;
 }
 // Called once after isFinished returns true

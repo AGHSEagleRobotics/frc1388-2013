@@ -35,5 +35,6 @@ public:
 	void runDefaultVoltage();
 	float getVoltage();
 	float voltageOut;
+	bool isMotorRunning();
 };
 #endif
