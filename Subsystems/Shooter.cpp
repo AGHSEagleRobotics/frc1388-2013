@@ -22,13 +22,13 @@ Shooter::Shooter() : Subsystem("Shooter")
 	voltageOut = VOLTAGE_OUT;
 	
 	shooterMotor->ChangeControlMode(CANJaguar::kVoltage);
-//	shooterMotor->SetPID(1.6, 0.0596, 0.1);
-	shooterMotor->SetSpeedReference(CANJaguar::kSpeedRef_Encoder);
-	shooterMotor->ConfigEncoderCodesPerRev(4);
 	shooterMotor->ConfigMaxOutputVoltage(12);
 	shooterMotor->SetVoltageRampRate(0.0);
-	shooterMotor->EnableControl();
-	shooterMotor->Set(3500);
+//	shooterMotor->SetPID(1.6, 0.0596, 0.1);
+//	shooterMotor->SetSpeedReference(CANJaguar::kSpeedRef_Encoder);
+//	shooterMotor->ConfigEncoderCodesPerRev(4);
+//	shooterMotor->EnableControl();
+//	shooterMotor->Set(3500);
 	printf("PID Initialized! \n");
 	
 	
@@ -73,4 +73,9 @@ void Shooter::runDefaultVoltage()
 float Shooter::getVoltage()
 {
 	return shooterMotor->Get();
+}
+
+bool Shooter::isMotorRunning()
+{
+	return isShooterRunning;
 }
