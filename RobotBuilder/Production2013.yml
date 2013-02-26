@@ -100,7 +100,7 @@ Children:
           value: '1'
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Default Command, type: Command, validators: null, value: None}
+        name: Default Command, type: Command, validators: null, value: DriveWithJoystick}
   - Name: Feeder
     Base: Subsystem
     Children:
@@ -221,7 +221,7 @@ Children:
           value: '7'
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Default Command, type: Command, validators: null, value: None}
+        name: Default Command, type: Command, validators: null, value: Climb}
   - Name: Shooter
     Base: Subsystem
     Children:
@@ -276,7 +276,7 @@ Children:
         default: 1
         name: Number
         validators: &id018 [Joystick]
-        value: '1'
+        value: '2'
   - Name: LeftStick
     Base: Joystick
     Children:
@@ -310,7 +310,7 @@ Children:
         default: 1
         name: Number
         validators: *id018
-        value: '2'
+        value: '1'
   - Name: OpStick
     Base: Joystick
     Children:
@@ -493,6 +493,12 @@ Children:
         name: Requires, type: Subsystem, validators: null, value: Shooter}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
+  - Name: AutonGroup
+    Base: Command Group
+    Children: []
+    Properties:
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
   Properties: {}
 Properties:
   Autonomous Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
@@ -512,6 +518,6 @@ Properties:
     validators: null, value: 1388}
   Export Commands: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Commands, validators: null, value: true}
-  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Documents
-      and Settings\Eagle Robotics\NetBeansProjects', extension: null, folder: true,
-    name: Java Project Directory, validators: null, value: 'C:\Users\Davey\NetBeansProjects'}
+  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\Jeff\NetBeansProjects',
+    extension: null, folder: true, name: Java Project Directory, validators: null,
+    value: 'C:\Users\Davey\NetBeansProjects'}

@@ -71,7 +71,6 @@ void Robot::GlobalPeriodic()
 	// Update the SmartDashboard
 	SmartDashboard::PutNumber("ShooterVoltage", shootvoltage);
 	SmartDashboard::PutNumber("Distance",distance);
-
 }
 void Robot::RobotInit() {
 	GlobalInit();
@@ -163,7 +162,6 @@ void Robot::TeleopPeriodic() {
 		Scheduler::GetInstance()->Run();
 	
 	
-
 	//SmartDashboard::GetNumber("")
 //	float value = Robot::oi->returnRightXAxis();
 //	
