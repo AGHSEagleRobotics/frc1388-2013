@@ -31,21 +31,7 @@ void Climber::InitDefaultCommand() {
 // Put methods for controlling this subsystem(new Climber())->TapesUpDown();
 // here. Call these from Commands.
 void Climber::TapesInOut(float opstickx, bool opTapesIn, bool opTapesOut, bool TapesEnabled){
-	/*
-	 * This is the code for using the opstick x axis.
-	 * 
-		if ( opstickx < 0 && tapeLimitLeft == false && tapeLimitRight == false)
-		{
-			climberMotor->Set(opstickx);
-		}
-		
-		if ( opstickx > 0){
-			climberMotor->Set(opstickx);
-		}
-		
-	*/		
-		// && tapeLimitLeft == false && tapeLimitRight == false FOR LATE
-		
+
 		
 	if (opTapesIn == true )
 		{
@@ -91,7 +77,7 @@ void Climber::TapesUpDown(float opsticky, bool opTapesIn, bool opTapesOut, bool 
 		else { //TapesEnabled == true
 			
 			tapeAngleLeft->Set(opsticky);
-			printf("opsticky = %f\n", opsticky);
+			
 			tapeAngleRight->Set(1 - opsticky); // mirror servo output in other direction
 		}
 	}
