@@ -27,7 +27,7 @@ Shooter::Shooter() : Subsystem("Shooter")
 //	shooterMotor->SetPID(1.6, 0.0596, 0.1);
 //	shooterMotor->SetSpeedReference(CANJaguar::kSpeedRef_Encoder);
 //	shooterMotor->ConfigEncoderCodesPerRev(4);
-//	shooterMotor->EnableControl();
+	shooterMotor->EnableControl();
 //	shooterMotor->Set(3500);
 	printf("PID Initialized! \n");
 	
