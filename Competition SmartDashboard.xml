@@ -1,0 +1,29 @@
+<xml version="1.0">
+<dashboard>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.VideoStreamViewerExtension">
+		<location x="3" y="8"/>
+		<width>627</width>
+		<height>473</height>
+		<property name="Camera IP Address" value="10.13.88.90"/>
+	</static-widget>
+	<widget field="Shooter" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
+		<location x="645" y="83"/>
+		<width>83</width>
+		<height>41</height>
+	</widget>
+	<widget field="Software Version: " type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="640" y="16"/>
+	</widget>
+	<widget field="ShooterVoltage" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="646" y="142"/>
+	</widget>
+	<widget field="Distance" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="645" y="210"/>
+	</widget>
+	<widget field="Battery Voltage" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="841" y="17"/>
+	</widget>
+</dashboard>
+<live-window>
+</live-window>
+</xml>
