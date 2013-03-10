@@ -254,7 +254,7 @@ Children:
           name: Command
           type: Command
           validators: &id014 [TypeDropdownSelected]
-          value: Shoot
+          value: TriggerCommand
         Button: !!robotbuilder.data.properties.ChoicesProperty
           choices: &id015 ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
             '12']
@@ -289,7 +289,7 @@ Children:
           name: Command
           type: Command
           validators: *id014
-          value: Shoot
+          value: TriggerCommand
         Button: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id015
           default: '1'
@@ -499,6 +499,14 @@ Children:
     Properties:
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
+  - Name: TriggerCommand
+    Base: Command
+    Children: []
+    Properties:
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: None}
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
   Properties: {}
 Properties:
   Autonomous Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
@@ -518,6 +526,6 @@ Properties:
     validators: null, value: 1388}
   Export Commands: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Commands, validators: null, value: true}
-  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\Jeff\NetBeansProjects',
-    extension: null, folder: true, name: Java Project Directory, validators: null,
-    value: 'C:\Users\Davey\NetBeansProjects'}
+  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Documents
+      and Settings\Eagle Robotics\NetBeansProjects', extension: null, folder: true,
+    name: Java Project Directory, validators: null, value: 'C:\Users\Davey\NetBeansProjects'}

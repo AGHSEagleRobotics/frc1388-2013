@@ -59,6 +59,8 @@ private:
 	float distance;
 	Timer time;
 	Timer period;
+	Timer smartTimer;
+	float smartDashboardRefresh;
 	float timesinceinit;
 	bool hasperiodpassed;
     void GlobalInit();

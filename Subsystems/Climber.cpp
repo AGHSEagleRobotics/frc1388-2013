@@ -31,7 +31,6 @@ void Climber::InitDefaultCommand() {
 // Put methods for controlling this subsystem(new Climber())->TapesUpDown();
 // here. Call these from Commands.
 void Climber::TapesInOut(float opstickx, bool opTapesIn, bool opTapesOut, bool TapesEnabled){
-
 		
 	if (opTapesIn == true )
 		{

@@ -74,7 +74,6 @@ float Shooter::getVoltage()
 {
 	return shooterMotor->Get();
 }
-
 bool Shooter::isMotorRunning()
 {
 	return isShooterRunning;

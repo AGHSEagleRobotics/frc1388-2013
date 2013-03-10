@@ -50,7 +50,6 @@ void Robot::GlobalPeriodic()
 	distance = Robot::driveTrain->getDistance();
 //	printf("Get BattVoltage");
 	battvoltage = DriverStation::GetInstance()->GetBatteryVoltage();
-
 	
 	if((timesinceinit > 10) && (hasperiodpassed == true))
 	{
@@ -69,14 +68,21 @@ void Robot::GlobalPeriodic()
 	}
 //		printf("VoltageOut: %f \n", Robot::shooter->voltageOut);
 	// Update the SmartDashboard
+	smartTimer.Start();
+	smartDashboardRefresh = smartTimer.HasPeriodPassed(1);
+	
+	if(smartDashboardRefresh == true)
+		{
+		SmartDashboard::PutNumber("Distance",distance);
+		SmartDashboard::PutNumber("Battery Voltage", battvoltage);
+		}
+
 	SmartDashboard::PutNumber("ShooterVoltage", shootvoltage);
-	SmartDashboard::PutNumber("Distance",distance);
-	SmartDashboard::PutNumber("Battery Voltage", battvoltage);
+	
 	if(shooter->isMotorRunning() == true)
 		SmartDashboard::PutBoolean("Shooter", true);
 	else
 		SmartDashboard::PutBoolean("Shooter", false);
-
 }
 void Robot::RobotInit() {
 	GlobalInit();
@@ -133,6 +139,8 @@ void Robot::RobotInit() {
 	
 void Robot::DisabledInit(){
 	GlobalInit();
+	SmartDashboard::PutBoolean("Shooter", false);
+	
 //	printf("DisabledInit \n");
 }
 void Robot::DisabledPeriodic(){
@@ -166,17 +174,6 @@ void Robot::TeleopPeriodic() {
 	GlobalPeriodic();
 	if (autonomousCommand != NULL)
 		Scheduler::GetInstance()->Run();
-	
-	
-	//SmartDashboard::GetNumber("")
-//	float value = Robot::oi->returnRightXAxis();
-//	
-//	printf("CAN set to %f \n", value);
-//	
-//	if((value < 0.1) && (value > -0.1))
-//		value = 0;	
-//	
-//	RobotMap::shooterMotor->Set(value);
 }
 void Robot::TestInit(){
 	GlobalInit();
