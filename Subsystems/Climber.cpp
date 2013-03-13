@@ -64,19 +64,19 @@ void Climber::TapesUpDown(float opsticky, bool opTapesIn, bool opTapesOut, bool 
 		float makepositive = 1.2;
 		
 		float scalingfactor = .4; //take the value range from 0-2 to 1/4 of that to be between 0-1 for input
-		opsticky = (opsticky + makepositive)*scalingfactor;		
+		opsticky = (-opsticky + makepositive)*scalingfactor;		
 		
-		if (TapesEnabled == false){
+	//	if (TapesEnabled == false){
 		
 		
-			tapeAngleLeft->SetOffline();       
-			tapeAngleRight->SetOffline();
+		//	tapeAngleLeft->SetOffline();       
+		//	tapeAngleRight->SetOffline();
 		
-		}
-		else { //TapesEnabled == true
+	//	}
+	//	else { //TapesEnabled == true
 			
 			tapeAngleLeft->Set(opsticky);
 			
 			tapeAngleRight->Set(1 - opsticky); // mirror servo output in other direction
-		}
+	//	}
 	}
