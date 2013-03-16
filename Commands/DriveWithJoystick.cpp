@@ -35,15 +35,9 @@ void DriveWithJoystick::Execute() {
 	
 	if((rightaxis < DEADBAND) && (rightaxis > -DEADBAND))
 		rightaxis = 0;	
-//	printf("leftaxis: %f \n", leftaxis);
-//	printf("rightaxis: %f \n", rightaxis);
-//	printf("DriveWithJoystick is running\n");
-	
-//	printf("driveTrain is:%x\n",Robot::driveTrain);
 	
 	Robot::driveTrain->tankDrive(leftaxis, rightaxis);
 	
-//	printf("Did it crash?\n");
 }
 // Make this return true when this Command no longer needs to run execute()
 bool DriveWithJoystick::IsFinished() {

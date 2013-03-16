@@ -38,22 +38,15 @@ void Robot::GlobalInit()
 }
 void Robot::GlobalPeriodic()
 {
-//	printf("GlobalPeriodic \n");
 	
-//	printf("Get time \n");
 	timesinceinit = time.Get();
-//	printf("Has period passed? \n");
 	hasperiodpassed = period.HasPeriodPassed(1);
-//	printf("Get ShooterVoltage \n");
 	shootvoltage = Robot::shooter->voltageOut;
-//	printf("Get Distance \n");
 	distance = Robot::driveTrain->getDistance();
-//	printf("Get BattVoltage");
 	battvoltage = DriverStation::GetInstance()->GetBatteryVoltage();
 	
 	if((timesinceinit > 10) && (hasperiodpassed == true))
 	{
-//		printf("Updating the Insight Display \n");
 		mDisplay.registerData(disp_BattVoltage, 1);
 		mDisplay.registerData(disp_ShootVoltage, 3);
 		mDisplay.registerData(disp_Distance, 2);
@@ -62,11 +55,6 @@ void Robot::GlobalPeriodic()
 		disp_ShootVoltage.setData(shootvoltage);
 		disp_Distance.setData(distance);
 	}
-	else
-	{
-//		printf("Not ten seconds \n");
-	}
-//		printf("VoltageOut: %f \n", Robot::shooter->voltageOut);
 	// Update the SmartDashboard
 	smartTimer.Start();
 	smartDashboardRefresh = smartTimer.HasPeriodPassed(1);
@@ -141,11 +129,9 @@ void Robot::DisabledInit(){
 	GlobalInit();
 	SmartDashboard::PutBoolean("Shooter", false);
 	
-//	printf("DisabledInit \n");
 }
 void Robot::DisabledPeriodic(){
 	GlobalPeriodic();
-//	printf("DisabledPeriodic \n");
 }
 void Robot::AutonomousInit() {
 	GlobalInit();

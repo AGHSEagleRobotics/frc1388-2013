@@ -28,8 +28,6 @@ void DriveTrain::InitDefaultCommand() {
 	
 }
 void DriveTrain::tankDrive(float leftstick, float rightstick) {
-//	printf("Get readt to ruuuummmbleee!!!%p\n",&RobotDrive::SetLeftRightMotorOutputs);
-//	robotDrive41->SetLeftRightMotorOutputs(leftstick, rightstick);
 	robotDrive->TankDrive(leftstick, rightstick);
 }
 // Put methods for controlling this subsystem
