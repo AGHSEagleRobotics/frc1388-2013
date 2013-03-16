@@ -35,19 +35,19 @@ void Climber::TapesInOut(float opstickx, bool opTapesIn, bool opTapesOut, bool T
 		
 	if (opTapesIn == true )
 		{
-			
-			climberMotor->Set(-CLIMBER_POWER_IN); //These are the climber power values, see the top.
-												  //Change as necessary.
+		
+		if (tapeLimitLeft == false || tapeLimitRight == false){
+				climberMotor->Set(-CLIMBER_POWER_IN);
+			}
+			else {
+				climberMotor->Set(0);
+			}
+														  //Change as necessary.
 		}	
 	else if (opTapesOut == true)
 		{
 		
-		if (tapeLimitLeft == false || tapeLimitRight == false){
-			climberMotor->Set(CLIMBER_POWER_OUT);
-		}
-		else {
-			climberMotor->Set(0);
-		}
+	climberMotor->Set(CLIMBER_POWER_OUT);
 			
 		}
 	else 
@@ -71,7 +71,7 @@ void Climber::TapesUpDown(float opsticky, bool opTapesIn, bool opTapesOut, bool 
 		float makepositive = 1.2;
 		
 		float scalingfactor = .4; //take the value range from 0-2 to 1/4 of that to be between 0-1 for input
-		opsticky = (-opsticky + makepositive)*scalingfactor;		
+		opsticky = (opsticky + makepositive)*scalingfactor;		
 		
 	//	if (TapesEnabled == false){
 		
