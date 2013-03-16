@@ -36,7 +36,7 @@ void Climber::TapesInOut(float opstickx, bool opTapesIn, bool opTapesOut, bool T
 	if (opTapesIn == true )
 		{
 		
-		if (tapeLimitLeft == false || tapeLimitRight == false){
+		if (tapeLimitLeft == false && tapeLimitRight == false){
 				climberMotor->Set(-CLIMBER_POWER_IN);
 			}
 			else {
