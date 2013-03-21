@@ -36,13 +36,14 @@ void Climber::TapesInOut(float opstickx, bool opTapesIn, bool opTapesOut, bool T
 	if (opTapesIn == true )
 		{
 		
-		if (tapeLimitLeft == false && tapeLimitRight == false){
+		// Commented out on 3/21/2013 16:23 to disable limit switches
+//		if (tapeLimitLeft == false && tapeLimitRight == false){
 				climberMotor->Set(-CLIMBER_POWER_IN);
-			}
-			else {
-				climberMotor->Set(0);
-			}
-														  //Change as necessary.
+//			}
+//			else {
+//				climberMotor->Set(0);
+//			}
+			  //Change as necessary.
 		}	
 	else if (opTapesOut == true)
 		{
