@@ -18,15 +18,15 @@ AutonGroup::AutonGroup() {
 	AddSequential(new RunShooter());
 		AddSequential(new WaitCommand (5));
 	AddSequential(new Shoot());
-		AddSequential(new WaitCommand (0.5));
+		AddSequential(new WaitCommand (1));
 	AddSequential(new Shoot());
-		AddSequential(new WaitCommand (0.5));
+		AddSequential(new WaitCommand (1));
 	AddSequential(new Shoot());
-		AddSequential(new WaitCommand (0.5));
+		AddSequential(new WaitCommand (1));
 	AddSequential(new Shoot());
-		AddSequential(new WaitCommand (0.5));
+		AddSequential(new WaitCommand (1));
 	AddSequential(new Shoot());
-		AddSequential(new WaitCommand (0.5));
+		AddSequential(new WaitCommand (1));
 	AddSequential(new Shoot());
 	
 	// Add Commands here:

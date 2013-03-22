@@ -31,23 +31,34 @@ void Climber::InitDefaultCommand() {
 }
 // Put methods for controlling this subsystem(new Climber())->TapesUpDown();
 // here. Call these from Commands.
-void Climber::TapesInOut(float opstickx, bool opTapesIn, bool opTapesOut, bool TapesEnabled, bool tapeLimitLeft, bool tapeLimitRight){
+void Climber::TapesInOut(float opstickx, bool opTapesIn, bool opTapesOut, bool TapesEnabled, bool tapeLimitLeft, bool tapeLimitRight, bool limitOverrideL, bool limitOverrideR){
 		
 	if (opTapesIn == true )
 		{
 		
+		climberMotor->Set(-CLIMBER_POWER_IN);
+		
+		
 		// Commented out on 3/21/2013 16:23 to disable limit switches
-//		if (tapeLimitLeft == false && tapeLimitRight == false){
-				climberMotor->Set(-CLIMBER_POWER_IN);
+		// NOTE: If you'd like to disable limit switches, comment everything in these brackets out
+		// and add the line : climberMotor->Set(-CLIMBER_POWER_IN); -Joel (3/22, 9:50 AM)
+//			if (tapeLimitLeft == false )
+//			{
+//					climberMotor->Set(-CLIMBER_POWER_IN);
 //			}
-//			else {
-//				climberMotor->Set(0);
+//		
+//			if (limitOverrideL == true || limitOverrideR == true)
+//			{
+//					climberMotor->Set(-CLIMBER_POWER_IN);
 //			}
-			  //Change as necessary.
+//			else 
+//			{
+//					climberMotor->Set(0);
+//			}
+//		
 		}	
 	else if (opTapesOut == true)
 		{
-		
 	climberMotor->Set(CLIMBER_POWER_OUT);
 			
 		}
