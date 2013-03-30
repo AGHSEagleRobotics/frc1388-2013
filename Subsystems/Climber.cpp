@@ -66,19 +66,19 @@ void Climber::TapesUpDown(float opstickx, float opsticky, bool opTapesIn, bool o
 	
 	//scale down joystick values for servos
 		float makepositive = 1.2;
-		float scalingfactor = .4;       //take the value range from 0-2 to 1/4 of that to be between 0-1 for input
+		float scalingfactor = .4;      
 		opsticky = (opsticky + makepositive)*scalingfactor;		
-		opstickx = opstickx*.3 ; 		//Scale down the values from the x axis.
+		opstickx = opstickx*.6; 		//This may need to be changed.
 			
 	
 	//Set scaled joystick values to servo for trim operation
-	if ( opstickx <= -.5 || opstickx >= .5 ){ 	//Deadband 
+	if ( opstickx <= -.3 || opstickx >= .3 ){ 	//Deadband 
 		
-		if (opstickx >= .5){
-			tapeAngleLeft->Set(opsticky - opstickx); //change the y value with the x
-			tapeAngleRight->Set(1-opsticky);
+		if (opstickx >= .3){
+			tapeAngleLeft->Set(opsticky); //change the y value with the x
+			tapeAngleRight->Set(1-(opsticky+opstickx));
 		}
-		if (opstickx <= -.5){
+		if (opstickx <= -.3){
 			tapeAngleLeft->Set(opsticky + opstickx); //change the y value with the x
 			tapeAngleRight->Set(1-opsticky);
 		}
@@ -88,6 +88,5 @@ void Climber::TapesUpDown(float opstickx, float opsticky, bool opTapesIn, bool o
 		tapeAngleLeft->Set(opsticky);
 		tapeAngleRight->Set(1 - opsticky); 
 	}
-	
 }
 
