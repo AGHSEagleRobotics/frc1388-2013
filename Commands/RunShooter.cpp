@@ -19,11 +19,12 @@ RunShooter::RunShooter() {
 }
 // Called just before this Command runs the first time
 void RunShooter::Initialize() {
-	Robot::shooter->runTheShooter();
+	
 }
 // Called repeatedly when this Command is scheduled to run
 void RunShooter::Execute()
-{		
+{	
+	Robot::shooter->runTheShooter();
 //	printf("Control Mode: %d Voltage: %f Speed: %f Current: %f\n",
 //				 RobotMap::shootershooterMotor->GetControlMode(),
 //				 RobotMap::shootershooterMotor->GetOutputVoltage(),
@@ -33,12 +34,15 @@ void RunShooter::Execute()
 // Make this return true when this Command no longer needs to run execute()
 bool RunShooter::IsFinished()
 {
-	return true;
+		return false;
 }
 // Called once after isFinished returns true
-void RunShooter::End() {
+void RunShooter::End()
+{
+	
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
 void RunShooter::Interrupted() {
+	Robot::shooter->runTheShooter();
 }

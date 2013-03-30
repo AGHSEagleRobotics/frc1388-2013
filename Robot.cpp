@@ -65,7 +65,6 @@ void Robot::GlobalPeriodic()
 		SmartDashboard::PutNumber("Distance",distance);
 		SmartDashboard::PutNumber("Battery Voltage", battvoltage);
 		}
-
 	SmartDashboard::PutNumber("ShooterVoltage", shootvoltage);
 	
 	if(shooter->isMotorRunning() == true)
