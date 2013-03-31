@@ -8,26 +8,28 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #include "AutonGroup.h"
 #include "RunShooter.h"
 #include "Shoot.h"
+#include "DriveStraight.h"
+#include "DriveTurn.h"
 
 AutonGroup::AutonGroup() {
-	AddSequential(new RunShooter());
-		AddSequential(new WaitCommand (5));
+	AddParallel(new RunShooter());
+	AddSequential(new WaitCommand (3));
 	AddSequential(new Shoot());
-		AddSequential(new WaitCommand (1));
+	AddSequential(new WaitCommand (1));
 	AddSequential(new Shoot());
-		AddSequential(new WaitCommand (1));
+	AddSequential(new WaitCommand (1));
 	AddSequential(new Shoot());
-		AddSequential(new WaitCommand (1));
-	AddSequential(new Shoot());
-		AddSequential(new WaitCommand (1));
-	AddSequential(new Shoot());
-		AddSequential(new WaitCommand (1));
-	AddSequential(new Shoot());
+	
+	// back up
+	AddSequential(new DriveStraight(-0.7,2.0));
+	// turn right
+	AddSequential(new DriveTurn(0.7,2.0));
+	// drive forward
+	AddSequential(new DriveStraight(0.7,2.0));
+	
 	
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());

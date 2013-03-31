@@ -13,6 +13,8 @@
 #include "Commands/AutonGroup.h"
 #include "Commands/AutonomousCommand.h"
 #include "Commands/Climb.h"
+#include "Commands/DriveStraight.h"
+#include "Commands/DriveTurn.h"
 #include "Commands/DriveWithJoystick.h"
 #include "Commands/RunDefaultVoltage.h"
 #include "Commands/RunShooter.h"
