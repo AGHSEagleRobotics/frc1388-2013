@@ -33,8 +33,8 @@ void Climb::Execute() {
 	bool tapeLimitLeft = RobotMap::climberTapeLimitLeft->Get();
 	bool tapeLimitRight = RobotMap::climberTapeLimitRight->Get();
 	Robot::climber->TapesInOut(opstickx, opTapesIn, opTapesOut, TapesEnabled, tapeLimitLeft, tapeLimitRight, limitOverrideL, limitOverrideR);
-	Robot::climber->TapesUpDown(opsticky, opTapesIn, opTapesOut, TapesEnabled);
-	
+	Robot::climber->TapesUpDown(opstickx, opsticky, opTapesIn, opTapesOut, TapesEnabled);
+
 	
 			
 	

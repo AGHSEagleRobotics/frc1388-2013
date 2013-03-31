@@ -10,6 +10,7 @@
 #include "DriveWithJoystick.h"
 #include "../SubSystems/DriveTrain.h"
 #define DEADBAND (0.1)
+#define SLOW_PERCENTAGE (0.5)
 DriveWithJoystick::DriveWithJoystick() {
 	// Use requires() here to declare subsystem dependencies
 	// eg. requires(chassis);
@@ -34,7 +35,21 @@ void DriveWithJoystick::Execute() {
 		leftaxis = 0;
 	
 	if((rightaxis < DEADBAND) && (rightaxis > -DEADBAND))
-		rightaxis = 0;	
+		rightaxis = 0;
+	
+	
+	// Code for the slow mode if either button "2" on the driver sticks is pressed.
+	leftButton2 = Robot::oi->getLeftStick()->GetRawButton(2);
+	rightButton2 = Robot::oi->getRightStick()->GetRawButton(2);
+	
+	if((leftButton2 == true) || (rightButton2 == true))
+	{
+		leftaxis *= SLOW_PERCENTAGE;
+		rightaxis *= SLOW_PERCENTAGE;
+	}
+	
+	
+	
 	
 	Robot::driveTrain->tankDrive(leftaxis, rightaxis);
 	

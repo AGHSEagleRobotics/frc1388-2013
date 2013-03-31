@@ -22,6 +22,9 @@
  * @author ExampleAuthor
  */
 class DriveWithJoystick: public Command {
+private:
+	bool leftButton2;
+	bool rightButton2;
 public:
 	DriveWithJoystick();
 	virtual void Initialize();
