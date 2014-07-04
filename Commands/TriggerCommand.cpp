@@ -27,8 +27,10 @@ void TriggerCommand::Execute() {
 bool TriggerCommand::IsFinished() {
 	if(Robot::oi->getRightStick()->GetTrigger() && Robot::oi->getLeftStick()->GetTrigger())
 		return true;
-	else
-		return false;
+//	//if (Robot::oi->getDemoDevice()->GetRawButton(1)) // just in case you'd like to use a demo button remotely. //todo: uncomment this line and build
+//		return true;
+//	else 
+//		return false;
 }
 // Called once after isFinished returns true
 void TriggerCommand::End() {

@@ -152,8 +152,8 @@ void Robot::TeleopInit() {
 	// continue until interrupted by another command, remove
 	// this line or comment it out.
 	autonomousCommand->Cancel();
-	(new RunShooter())->Start();
-	(new Shoot())->Start();
+	//(new RunShooter())->Start();
+	//(new Shoot())->Start();
 	//SmartDashboard::PutNumber("shooteradded", )
 	
 }
