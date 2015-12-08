@@ -26,6 +26,15 @@ void Shoot::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void Shoot::Execute()
 {
+	//if the robot is disabled or in not shooting mode, it ends shoot command
+	bool prdisabled = Robot::oi->getPRDisabled();
+	bool prdontshoot = Robot::oi->getPRDontShoot();
+
+	if( prdontshoot == true or prdisabled == true)
+	{
+		return;
+	}
+
 	if((timeCount > 0.45))
 		Robot::feeder->Reset();
 	else

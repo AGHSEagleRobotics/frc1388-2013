@@ -47,6 +47,15 @@ public:
 	virtual void TestInit();
 	virtual void TestPeriodic();
 	
+	virtual void togglePRDisabled();
+	virtual bool getPRDisabled();
+	virtual void togglePRDontMove();
+	virtual bool getPRDontMove();
+	virtual void togglePRDontShoot();
+	virtual bool getPRDontShoot();
+	virtual void togglePRSlowMode();
+	virtual bool getPRSlowMode();
+
 private:
 	insight::InsightLT mDisplay;
 	insight::StringData disp_GitVersion;
@@ -63,6 +72,10 @@ private:
 	float smartDashboardRefresh;
 	float timesinceinit;
 	bool hasperiodpassed;
+	bool PRDisabled;
+	bool PRDontMove;
+	bool PRDontShoot;
+	bool PRSlowMode;
     void GlobalInit();
     void GlobalPeriodic();
 };

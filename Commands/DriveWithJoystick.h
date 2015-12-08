@@ -27,6 +27,7 @@ private:
 	bool rightButton2;
 public:
 	DriveWithJoystick();
+	virtual void TogglePRMode();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

@@ -123,6 +123,12 @@ void Robot::RobotInit() {
 	
 	// Display on SmartDashboard:		
 	SmartDashboard::PutString("Software Version: ", gitVersion);
+
+	PRDisabled = false;
+	PRDontMove = false;
+	PRDontShoot = false;
+	PRSlowMode = false;
+
   }
 	
 void Robot::DisabledInit(){
@@ -170,4 +176,37 @@ void Robot::TestPeriodic() {
 	lw->Run();
 	
 }
+
+void Robot::togglePRDisabled() {
+	PRDisabled = !PRDisabled;
+}
+
+bool Robot::getPRDisabled(){
+	return PRDisabled;
+}
+
+void Robot::togglePRDontMove(){
+	PRDontMove = !PRDontMove;
+}
+
+bool Robot::getPRDontMove(){
+	return PRDontMove;
+}
+
+void Robot::togglePRDontShoot(){
+	PRDontShoot = !PRDontShoot;
+}
+
+bool Robot::getPRDontShoot(){
+	return PRDontShoot;
+}
+
+void Robot::togglePRSlowMode(){
+	PRSlowMode = !PRSlowMode;
+}
+
+bool Robot::getPRSlowMode(){
+	return PRSlowMode;
+}
+
 START_ROBOT_CLASS(Robot);
